@@ -87,11 +87,11 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('profile', kwargs={'user_id': self.request.user.id})
 
+
 # View for deleting a post
-@login_required
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
-    template_name = 'confirm_delete.html'
+    template_name = 'profile/profile.html'
 
     def get_success_url(self):
         return reverse_lazy('profile', kwargs={'user_id': self.request.user.id})
